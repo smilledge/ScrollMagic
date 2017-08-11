@@ -3,7 +3,7 @@
  * The javascript library for magical scroll interactions.
  * (c) 2015 Jan Paepke (@janpaepke)
  * Project Website: http://scrollmagic.io
- * 
+ *
  * @version 2.0.5
  * @license Dual licensed under MIT license and GPL.
  * @author Jan Paepke - e-mail@janpaepke.de
@@ -15,12 +15,12 @@
  * Velocity is published under MIT license.
  */
 /**
- * This plugin is meant to be used in conjunction with the Velocity animation framework.  
+ * This plugin is meant to be used in conjunction with the Velocity animation framework.
  * It offers an easy API to __trigger__ Velocity animations.
  *
- * With the current version of Velocity scrollbound animations (scenes with duration) are not supported.  
+ * With the current version of Velocity scrollbound animations (scenes with duration) are not supported.
  * This feature will be added as soon as Velocity provides the appropriate API.
- * 
+ *
  * To have access to this extension, please include `plugins/animation.velocity.js`.
  * @requires {@link http://julian.com/research/velocity/|Velocity ~1.2.0}
  * @mixin animation.Velocity
@@ -38,6 +38,11 @@
 	}
 }(this, function (ScrollMagic, velocity) {
 	"use strict";
+
+	if (typeof(window) === 'undefined') {
+		return;
+	}
+
 	var NAMESPACE = "animation.velocity";
 
 	var
@@ -136,7 +141,7 @@
 		};
 
 		/**
-		 * Add a Velocity animation to the scene.  
+		 * Add a Velocity animation to the scene.
 		 * The method accepts the same parameters as Velocity, with the first parameter being the target element.
 		 *
 		 * To gain better understanding, check out the [Velocity example](../examples/basic/simple_velocity.html).
@@ -186,7 +191,7 @@
 			return Scene;
 		};
 		/**
-		 * Remove the animation from the scene.  
+		 * Remove the animation from the scene.
 		 * This will stop the scene from triggering the animation.
 		 *
 		 * Using the reset option you can decide if the animation should remain in the current state or be rewound to set the target elements back to the state they were in before the animation was added to the scene.
